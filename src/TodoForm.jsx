@@ -16,6 +16,10 @@ export default function TodoForm({ addTodo }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // 新增判斷，假如輸入框是空的，按下 enter 並不會新增空白的 todo 項目
+    if (text === "") return;
+
     addTodo(text);
     setText("");
   };
